@@ -1,0 +1,189 @@
+/* ==========================================================================
+   World English Bible (Classic) — site chrome stylesheet
+   ==========================================================================
+   This file styles ONLY the pages index.html, reader.html --
+   the book chooser grid and the sticky chapter toolbar. 
+   ========================================================================== */
+
+:root {
+  --ink: #202020;
+  --ink-soft: #5a5a5a;
+  --paper: #faf8f3;
+  --paper-card: #ffffff;
+  --accent: #204880;      /* matches gentiumplus.css's .tnav hover blue */
+  --accent-soft: #6f7c94;
+  --border: #d8d2c4;
+  --max-width: 900px;
+}
+
+* { box-sizing: border-box; }
+
+html {font-size: 18px}
+
+body.site-chrome {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); }
+
+header.site-header {
+  background: var(--paper-card);
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 1rem;
+  text-align: center;
+}
+
+header.site-header h1 {
+  margin: 0 0 .2rem;
+  font-size: 1.7rem;
+  color: var(--accent);
+}
+
+header.site-header p.subtitle {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .95rem;
+}
+
+main.site-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+/* ---------- index.html: book chooser ---------- */
+
+.front-links {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem 0 1.5rem;
+}
+
+.front-links a {
+  display: inline-block;
+  background: var(--paper-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.front-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+.testament-group h2 {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: .4rem;
+  margin-top: 2.2rem;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: .65rem;
+  margin: 1rem 0;
+}
+
+.book-card {
+  display: block;
+  background: var(--paper-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .7rem .6rem;
+  text-decoration: none;
+  color: var(--ink);
+  text-align: center;
+  transition: transform .1s ease, box-shadow .1s ease;
+  font-size: .95rem;
+}
+
+.book-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  border-color: var(--accent);
+}
+
+/* ---------- reader.html: sticky chapter toolbar + iframe ---------- */
+
+.reader-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;  
+  justify-content: center;
+  gap: .5rem;
+  /*position: sticky;
+  top: 0;*/
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  background: var(--paper);
+  padding: .55rem .5rem;
+  border-bottom: 1px solid var(--border);
+  z-index: 5;
+  font-size: .9rem;
+  /* Hidden by default; reader.js reveals it once the iframe is showing a
+     recognised chapter (see resyncToolbar() in reader.js). This matches the
+     requirement that the sticky selector appears specifically when viewing
+     a chapter, not on a book's own first/intro page. */
+  display: none;
+}
+
+.reader-toolbar.visible { display: flex; }
+
+.reader-toolbar select,
+.reader-toolbar button {
+  font-size: .95rem;
+  padding: .3rem .55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--paper-card);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.reader-toolbar button:disabled { opacity: .35; cursor: default; }
+
+.reader-book-title {
+  font-weight: bold;
+  color: var(--accent);
+  margin-inline-end: .3rem;
+}
+
+.reader-frame-wrap { margin-top: 0rem; }
+
+iframe#bibleFrame {
+  display: block;
+  width: 100%;
+  border: 0;
+  /* Height is set dynamically by reader.js to match the loaded page's own
+     content height, so the OUTER page scrolls as a single unit and the
+     toolbar above stays correctly "stuck" while scrolling. */
+}
+
+.loading, .error-box {
+  text-align: center;
+  color: var(--ink-soft);
+  padding: 3rem 1rem;
+}
+
+.error-box { color: #a33; }
+
+footer.site-footer {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: .8rem;
+  padding: 2rem 1rem;
+}
+
+footer.site-footer a { margin: 0 .4rem; }
