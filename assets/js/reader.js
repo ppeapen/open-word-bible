@@ -50,7 +50,7 @@
   let currentChapterIndex = -1;
   let lastPopulatedCode = null; // avoids rebuilding the <select> on every load
 
-  homeBtn.addEventListener('click', () => { window.location.href = 'index.htm'; });
+  homeBtn.addEventListener('click', () => { window.location.href = '../index.htm'; });
 
   fetch('books.json')
     .then(res => res.json())

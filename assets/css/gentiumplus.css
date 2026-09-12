@@ -9,12 +9,22 @@
     font-weight: normal;
     font-style: normal;
 }
+/* greek 400*/
+@font-face {font-family: 'Bona Nova'; font-style: normal;  font-weight: 400; font-display: swap; src: url(../fonts/bonaNova_greek-400.woff2) format('woff2');  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}
+/* greek 700*/
+@font-face {font-family: 'Bona Nova';font-style: normal;  font-weight: 700; font-display: swap;src: url(../fonts/bonaNova_greek-700.woff2) format('woff2');  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}
+/* hebrew 400*/
+@font-face {font-family: 'Bona Nova';font-style: normal;  font-weight: 400;font-display: swap;src: url(../fonts/bonaNova_hebrew-400.woff2) format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}
+/* hebrew 700*/
+@font-face {font-family: 'Bona Nova';font-style: normal;  font-weight: 700;  font-display: swap; src: url(../fonts/bonaNova_hebrew-700.woff2) format('woff2');  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}
 html, body	{
     font-family: 'Gentium Plus','Gentium','serif';
     font-size: 18px;
     line-height:1.4;
     color:black;
 }
+.heb {font-family: "Bona Nova", serif;}
+.gk {font-family: "Bona Nova", serif;}
 h1 { font-weight: normal; }
 .main	{max-width: 800px;  margin: 20px auto;}
 .main:after	{content:"";display:block}
@@ -67,7 +77,8 @@ span.add	{font-style:italic}
 .ebs,.ebs1,.ebs2,.ebs3	{font-weight:bold;display:block;margin:.5em 0 .5em 0;text-indent:2em;color:rgb(0,0,128)}
 .ebs1	{font-size:1.2em}
 .ebs3	{font-size:0.9em}
-.fm,.notemark	{vertical-align:super;margin-left:.16em;line-height:0;position: relative;text-decoration:none;color:rgb(0,0,128)}
+.fm {vertical-align:super;margin-left:.16em;line-height:0;position: relative;text-decoration:none;color:rgb(0,0,128)}
+.notemark	{vertical-align:super;margin-left:0.05em;line-height:0;position: relative;text-decoration:none;color:rgb(0,60,128)}
 .fp	{display:block;margin:.5em 0 .5em 12em}
 .f,.glo	{display:block;margin:.5em 0 .5em 0;color:rgb(0,0,128)}
 .f,.x	{margin:1.5em;text-size:0.7em;color:rgb(0,0,128)}
@@ -180,3 +191,10 @@ ul.vnav	{list-style-type:none;padding:5px;margin-left:0;text-align:center;float:
 .vnav a:hover	{background-color:#0520ff !important;color:#ffffff}
 a:link {text-decoration: none;}
 div.bookList	{float:left;margin:0px;padding:3px;width:13rem;background:rgb(223,255,255)}
+
+/*larger font-size on big screens*/
+@media (min-width: 850px) {
+    html, body  {
+        font-size: 24px;
+    }
+}
