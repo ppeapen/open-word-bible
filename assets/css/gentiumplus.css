@@ -63,6 +63,7 @@ html, body	{
     font-size: 18px;
     line-height:1.4;
     color:black;
+    scroll-padding-top: 60px; /*height of the top navbar*/
 }
 .heb {font-family: "Bona Nova", serif;}
 .gk {font-family: "Bona Nova", serif;}
@@ -183,9 +184,9 @@ h1,h2,h3,.mt,.mt1,.mte,
 .pm,.pmo,.pmc,.psi,.pmr,.pr	{margin:.5em 2em 0 2em}
 .q,.q1,.q2,.q3	{margin-top:0pt}
 .q,.q1,.q2,.q3	{margin-top:0pt}
-html[dir=ltr] .q,.q1	{text-indent:-2em;margin-left:2em}
-html[dir=ltr] .q2	{text-indent:-1em; margin-left:2em}
-html[dir=ltr] .q3	{text-indent:-1em; margin-left:3em}
+.q,.q1	{text-indent:-2em;margin-left:2em}
+.q2	{text-indent:-1em; margin-left:2em}
+.q3	{text-indent:-1em; margin-left:3em}
 html[dir=rtl] .q,.q1	{text-indent:-2em;margin-right:2em}
 html[dir=rtl] .q2	{text-indent:-1em; margin-right:2em}
 html[dir=rtl] .q3	{text-indent:-1em; margin-right:3em}
